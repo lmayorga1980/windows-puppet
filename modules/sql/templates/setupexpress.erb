@@ -1,0 +1,110 @@
+;SQLSERVER Configuration File
+;SQLSERVER Configuration File
+[SQLSERVER2008]
+
+; Specifies a Setup work flow, like INSTALL, UNINSTALL, or UPGRADE. This is a required parameter. 
+
+ACTION=Install
+
+; Specifies features to install, uninstall, or upgrade. The list of top-level features include SQL, AS, RS, IS, and Tools. The SQL feature will install the database engine, replication, and full-text. The Tools feature will install Management Tools, Books online, Business Intelligence Development Studio, and other shared components. 
+
+FEATURES=<%= @features %>
+
+; Required to acknowledge acceptance of the license terms.
+
+IACCEPTSQLSERVERLICENSETERMS="True"
+
+; Displays the command line parameters usage 
+
+HELP="False"
+
+; Specifies that the detailed Setup log should be piped to the console. 
+
+INDICATEPROGRESS="True"
+
+; Setup will not display any user interface. 
+
+QUIET="True"
+
+; Setup will display progress only without any user interaction. 
+
+;QUIETSIMPLE="True"
+
+; Specifies that Setup should install into WOW64. This command line argument is not supported on an IA64 or a 32-bit system. 
+
+X86="False"
+
+; Detailed help for command line argument ENU has not been defined yet. 
+
+ENU="True"
+
+; Parameter that controls the user interface behavior. Valid values are Normal for the full UI, and AutoAdvance for a simplied UI. 
+
+; UIMODE="Normal"
+
+; Specify a default or named instance. MSSQLSERVER is the default instance for non-Express editions and SQLExpress for Express editions. This parameter is required when installing the SQL Server Database Engine (SQL), Analysis Services (AS), or Reporting Services (RS). 
+
+INSTANCENAME="SQLEXPRESS"
+
+; A port number used to connect to the SharePoint Central Administration web application. 
+
+FARMADMINPORT="0"
+
+; Specifies the account for the SQL Server Agent service.
+
+AGTSVCACCOUNT = "NT AUTHORITY\NETWORK SERVICE"
+
+; Specify the installation directory.
+
+INSTANCEDIR="C:\Program Files\Microsoft SQL Server"
+
+; Specify the root installation directory for shared components.  This directory remains unchanged after shared components are already installed.
+
+INSTALLSHAREDDIR="C:\Program Files\Microsoft SQL Server"
+
+; Specify the root installation directory for the WOW64 shared components.  This directory remains unchanged after WOW64 shared components are already installed.
+
+INSTALLSHAREDWOWDIR = "C:\Program Files (x86)\Microsoft SQL Server"
+
+ISSVCACCOUNT= "NT AUTHORITY\NETWORK SERVICE"
+
+ISSVCSTARTUPTYPE = "Automatic"
+
+RSSVCSTARTUPTYPE = "Automatic"
+
+; Startup type for the SQL Server service.
+
+SQLSVCSTARTUPTYPE = "Automatic"
+
+; Specify a default or named instance. MSSQLSERVER is the default instance for non-Express editions and SQLExpress for Express editions. This parameter is required when installing the SQL Server Database Engine (SQL), Analysis Services (AS), or Reporting Services (RS).
+
+INSTANCEID = "SQLEXPRESS"
+
+; Account for SQL Server service: Domain\User or system account.
+
+SQLSVCACCOUNT = "NT AUTHORITY\NETWORK SERVICE"
+
+; Windows account(s) to provision as SQL Server system administrators.
+
+SQLSYSADMINACCOUNTS = "DOMAIN\ACCOUNT" "DOMAIN\ANOTHER ACCOUNT"
+
+; Password for the SA Account
+
+SAPWD ="p@ssw0rd"
+
+; Specifies a Windows collation or an SQL collation to use for the Database Engine.
+
+SQLCOLLATION="SQL_Latin1_General_CP1_CI_AS"
+
+; Specify 0 to disable or 1 to enable the TCP/IP protocol.
+
+TCPENABLED="1"
+
+; Specify SQL for Mixed Authentication
+
+SECURITYMODE="SQL"
+
+; Startup type for Browser Service.
+
+BROWSERSVCSTARTUPTYPE="Automatic"
+
